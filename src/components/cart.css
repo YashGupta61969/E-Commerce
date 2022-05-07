@@ -1,0 +1,13 @@
+.cart_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--third);
+}
+
+.cart_logo h1{
+    margin-left: 1rem;
+    font-size: 4rem;
+    color: var(--third);
+}

@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;}
+
+:root{
+    font-size: 62.5%;
+    /* --primary: #FFFFD2;
+    --secondary: #C5FAD5;
+    --third: #AA96DA; */
+
+    --primary: #DDC3A5;
+    --secondary: #E0A96D;
+    --third: #201E20;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.app{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #DDC3A5;
+}
+
+.app::-webkit-scrollbar{
+    display: none;
+}
