@@ -1,0 +1,106 @@
+.contact{
+    position: relative;
+    overflow: hidden;
+}
+
+form{
+   display: flex; 
+   flex-direction: column;
+   align-items: center;
+   background-color: var(--secondary);
+   margin: 3rem auto;
+   border-radius: 2rem;
+   padding: 3rem ;
+   width: 40%;
+}
+
+.contact_head{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form_data, .form_message{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.form_data label, .form_message label{
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form_data input, .form_message textarea{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact_card button{
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 1rem;
+    border: none;
+    background-color: var(--third);
+    color: var(--primary);
+    font-size: 2rem;
+ } 
+
+ 
+
+ .contact_social_links{
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     right: 4rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+
+ .social_row{
+     margin: 1rem 0;
+     font-size: 2rem;
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     position: relative;
+ }
+
+ .social_row:hover strong{
+     display: block;
+ }
+
+ .social_row strong{
+     display: none;
+     position: absolute;
+     right: 5rem;
+ }
+ textarea{
+     resize: none;
+ }
+
+ @media screen and (max-width:800px) {
+    form{
+        width: 75%;
+        /* margin-bottom: 5rem; */
+    }
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .contact_social_links{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 8rem;
+        position: static;
+        height: 5rem;
+        width: 100%;
+        margin-bottom: 6rem;
+    }
+ }

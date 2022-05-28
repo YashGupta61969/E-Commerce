@@ -76,6 +76,7 @@
     cursor: pointer;
     font-size: 2rem;
     margin-top: 5rem;
+    display: flex;
 }
 
 .product_page_add:hover{
@@ -92,4 +93,28 @@
     font-size: 3rem;
     margin-bottom: 1rem;
     margin-left: 5rem;
+}
+
+
+@media screen and (max-width:800px) {
+    .product_page_right{
+        align-items: center;
+        margin-left: 0;
+    }
+    .product_page_description{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .product_page_top{
+        display: flex;
+        flex-direction: column;
+    }
+    .product_page_banner{
+        max-height: 60rem;
+    }
+    .product_page_banner img{
+        object-fit: contain;
+    }
 }

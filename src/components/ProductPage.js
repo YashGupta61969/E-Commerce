@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './productPage.css'
+import GlobalContext from '../Context';
+
 
 function ProductPage() {
+  const {cart, setCart} = useContext(GlobalContext);
     const {id} = useParams();
     const [product, setProduct] = useState('');
     const [category, setCategory] = useState('');
@@ -21,6 +24,11 @@ function ProductPage() {
             .then(json=>setCategory(json))
       },[id,product])
       
+
+      const addToCart = (e, id)=>{
+        e.preventDefault()
+        setCart([...cart, id])
+      }
     return (
     <div className='product_page'>
       <div className="product_page_top">
@@ -35,7 +43,7 @@ function ProductPage() {
         <h1 className="product_page_description_price">$ {product && product.price}</h1>
         <h2>{product.description}</h2>
           </div>
-          <button className='product_page_add'>ADD TO CART</button>
+          <button onClick={(e)=>addToCart(e,product.id)} disabled={cart.some(item=>item===product.id)}className='product_page_add'> <ShoppingCartIcon style={{marginRight:'5px', fontSize:'2.2rem'}}/>ADD TO CART</button>
       </div>
       </div>
       <div className="product_page_related">

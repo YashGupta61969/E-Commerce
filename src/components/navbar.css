@@ -39,6 +39,15 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.navbar_links a span{
+    position: absolute;
+    top: -50%;
+    transform: translateX(-100%);
+    font-size: 2.2rem;
+    color: var(--third);
 }
 
 .navbar_bottom{

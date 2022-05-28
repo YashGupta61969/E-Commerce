@@ -31,3 +31,7 @@ a{
 .app::-webkit-scrollbar{
     display: none;
 }
+
+.m-top{
+    margin-top: 2rem;
+}
