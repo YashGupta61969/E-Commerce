@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import GlobalContext from '../Context';
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import EmailIcon from '@mui/icons-material/Email';
+import InfoIcon from '@mui/icons-material/Info';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './navbar.css'
@@ -29,7 +29,7 @@ function Navbar() {
               <div className="navbar_links">
                   <Link to={'/'}><HomeIcon style={{marginRight:'5px', fontSize:'2.2rem'}}/>Home</Link> 
                   <Link to={'/cart'}> <ShoppingCartIcon style={{marginRight:'5px', fontSize:'2.2rem'}}/><span>{cart.length > 0 && cart.length}</span>Cart</Link>
-                  <Link to={'/contact'}> <EmailIcon style={{marginRight:'5px', fontSize:'2.2rem'}}/>Contact</Link>
+                  <Link to={'/about'}> <InfoIcon style={{marginRight:'5px', fontSize:'2.2rem'}}/>About</Link>
               </div>
              <div className="navbar_menu">
                 <MenuIcon onClick={()=>setShowMenu(!showMenu)} style={{fontSize:'4rem'}}/>

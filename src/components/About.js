@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react'
-import './contact.css'
+import React from 'react'
+import './about.css'
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -7,58 +7,15 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Contact() {
-
-  const ref = useRef();
-  const[name, setName] = useState('')
-  const[email, setEmail] = useState('')
-  const[message, setMessage] = useState('')
-  const[data, setData] = useState({})
-
-  const handleChange = (e)=>{
-    switch(e.target.id){
-      case 'name':
-        return setName(e.target.value);
-
-        case 'email':
-          return setEmail(e.target.value);
-          
-          case 'message':
-            return setMessage(e.target.value);
-
-            default:
-              return;
-    }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-        
-    setData({name,email,message})
-  
-  }
-
-
   return (
     <div className='contact'>
       <div className="contact_card">
-        <form className="contact_form" onSubmit={handleSubmit}>
-          <div className="contact_head">
-            <h1>Contact Us</h1>
+        <div className="contact_head">
+          <h1>About Us</h1>
+        </div>
+          <div className="contact_desc">
+            <p>This a fake store website created only for learning purposes. <br /> This Web App is build up using React.js. <br /> No Tailwind or Bootstrap is used in this WebApp. <br /> Only CSS is usewd to make this website fully responsive. <br /> This Web App will work perfectly in Desktop, Tablets, SmartPhones and other devices. <br /> The code for this Wesite is provided in GitHub. </p>
           </div>
-          <div className="form_data">
-            <label htmlFor="name">Name</label>
-            <input value={name} onChange={handleChange} ref={ref} type="text" id='name' placeholder='Eg. Elon Musk' />
-          </div>
-          <div className="form_data">
-            <label htmlFor="email">Email</label>
-            <input value={email} onChange={handleChange} ref={ref} type="email" id='email' placeholder='Eg. example@gmail.com' />
-          </div>
-          <div className="form_message">
-            <label htmlFor="message">Message</label>
-            <textarea id="message" value={message} onChange={handleChange} cols="30" rows="10" placeholder='Write a message you want to send'></textarea>
-          </div>
-          <button type='submit'>Send Message</button>
-        </form>
       </div>
 
       <div className="contact_social_links">
