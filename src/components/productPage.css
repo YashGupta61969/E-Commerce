@@ -63,6 +63,7 @@
 
 .product_page_description h2{
     margin-top: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     color: var(--third);
 }
@@ -108,13 +109,17 @@
 
 @media screen and (max-width:650px) {
     .product_page_top{
-        display: flex;
         flex-direction: column;
     }
     .product_page_banner{
         max-height: 60rem;
+        position: relative;
     }
     .product_page_banner img{
         object-fit: contain;
+        width: 100vw;
+    }
+    .product_page_related > h1{
+        margin-left: 8px;
     }
 }

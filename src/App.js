@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './app.css';
-import Cart from './components/Cart';
+import Cart from './features/cart/Cart';
 import CategoryPage from './components/CategoryPage';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import ProductPage from './components/ProductPage';
 
 function App() {
+  
   return (
     <div className="app">
       <Navbar/>

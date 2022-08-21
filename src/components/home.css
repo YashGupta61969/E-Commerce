@@ -161,12 +161,18 @@ position: absolute;
     .banner_text p{
         display: none;
     }
+    .product_card{
+        width: 24rem;
+    }
     .home_shop{
         grid-template-columns: repeat(2,1fr);
         margin-top: 2rem;
+        padding-left: 1px;
+        grid-row-gap: 8px;
+        grid-column-gap: 1px;
     }
 
     .product_card_img strong{
-        padding: 7px 1.8rem;
+        padding: 7px 1rem;
     }
 }

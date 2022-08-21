@@ -1,12 +1,13 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './home.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import GlobalContext from '../Context';
+import { useSelector, useDispatch } from 'react-redux'
+import {addToCart, removeFromCart} from '../features/cart/cartSlice'
 
 function Home() {
-  const {cart, setCart} = useContext(GlobalContext);
-
+  const dispatch = useDispatch();
+  const cartProducts = useSelector(state => state.cart.cart)
   const navigate = useNavigate();
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
@@ -21,9 +22,16 @@ function Home() {
     .then(data=>setCategories(data))
   },[]);
   
-const addToCart = (e, id)=>{
-  e.preventDefault()
-  setCart([...cart, id])
+const addToCartList = (e, product)=>{
+  e.preventDefault();
+  e.stopPropagation()
+  dispatch(addToCart(product))
+}
+
+const removeFromCartList = (e, product)=>{
+  e.preventDefault();
+  e.stopPropagation()
+  dispatch(removeFromCart(product))
 }
 
   return (
@@ -50,7 +58,11 @@ const addToCart = (e, id)=>{
             <div className="product_card_description">
               <h1>{product.title}</h1>
               <h1> Rating: {product.rating.rate}/5</h1>
-              <button onClick={(e)=>addToCart(e, product.id)} disabled={cart.some(item=>item===product.id)} > <ShoppingCartIcon style={{marginRight:'5px', fontSize:'1.8rem'}}/> Add To Cart</button>
+
+              {cartProducts.some(item=>item.id === product.id) ? 
+              <button onClick={e=>removeFromCartList(e,product.id)}> <ShoppingCartIcon style={{marginRight:'5px', fontSize:'1.8rem'}}/> Remove From Cart</button> :
+              <button onClick={e=>addToCartList(e,product)}> <ShoppingCartIcon style={{marginRight:'5px', fontSize:'1.8rem'}}/> Add To Cart</button> }
+
             </div>
           </div>
         ))}

@@ -51,29 +51,38 @@
      right: 50%;
      transform: translateX(50%);
  }
- textarea{
-     resize: none;
- }
 
  @media screen and (max-width:800px) {
-    form{
-        width: 75%;
-        /* margin-bottom: 5rem; */
-    }
-
     .contact{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
     }
 
-    .contact_social_links{
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 8rem;
-        position: static;
-        height: 5rem;
-        width: 100%;
-        margin-bottom: 6rem;
+    .contact_card{
+        margin-bottom: 10rem;
+        min-width: 40rem;
+        width: 80vw;
     }
+
+}
+
+@media screen and (max-width:800px){
+     .contact_social_links{
+         flex-direction: row;
+         justify-content: space-between;
+         position: static;
+         height: 5rem;
+         width: 100%;
+         margin-bottom: 6rem;
+     }
+     .social_row{
+         margin: 1rem;
+         font-size: 2rem;
+         display: flex;
+         align-items: center;
+         cursor: pointer;
+         position: relative;
+     }
+    
  }

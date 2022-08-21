@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './productPage.css'
-import GlobalContext from '../Context';
 
 
 function ProductPage() {
-  const {cart, setCart} = useContext(GlobalContext);
+  const [cart,setCart] = useState([])
     const {id} = useParams();
     const [product, setProduct] = useState('');
     const [category, setCategory] = useState('');
